@@ -27,7 +27,7 @@ function logout() {
     <template v-if="showShell">
       <v-app-bar app color="primary" dark>
         <v-app-bar-nav-icon @click="drawer = !drawer" />
-        <v-toolbar-title>Gestão de Veículos</v-toolbar-title>
+        <v-toolbar-title>🚗 Gestão de Motoristas e Veículos 🚗</v-toolbar-title>
         <v-spacer />
         <v-btn icon title="Sair" @click="logout"><v-icon>mdi-logout</v-icon></v-btn>
       </v-app-bar>

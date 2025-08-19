@@ -4,6 +4,7 @@ import Login from "../views/Login.vue";
 import HomeView from "../views/HomeView.vue";
 import UsersView from "../views/UsersView.vue";
 import VehiclesView from '@/views/VehiclesView.vue';
+import DriversView from "@/views/DriversView.vue";
 
 // placeholders (você pode criar depois)
 const VeiculosView = { template: '<v-container class="py-6"><h2>Veículos</h2></v-container>' }
@@ -16,7 +17,7 @@ const routes = [
   { path: "/home", name: "Home", component: HomeView, meta: { requiresAuth: true } },
   { path: "/users", name: "Users", component: UsersView, meta: { requiresAuth: true } },
   { path: "/vehicles", name: "Veiculos", component: VehiclesView, meta: { requiresAuth: true } },
-  { path: "/motoristas", name: "Motoristas", component: MotoristasView, meta: { requiresAuth: true } },
+  { path: "/drivers", name: "Motoristas", component: DriversView, meta: { requiresAuth: true } },
   { path: "/agendamentos", name: "Agendamentos", component: AgendamentosView, meta: { requiresAuth: true } },
 ];
 
