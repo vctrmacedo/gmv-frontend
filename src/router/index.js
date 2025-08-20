@@ -5,6 +5,7 @@ import HomeView from "../views/HomeView.vue";
 import UsersView from "../views/UsersView.vue";
 import VehiclesView from '@/views/VehiclesView.vue';
 import DriversView from "@/views/DriversView.vue";
+import ScheduleView from "@/views/ScheduleView.vue";
 
 // placeholders (você pode criar depois)
 const VeiculosView = { template: '<v-container class="py-6"><h2>Veículos</h2></v-container>' }
@@ -18,7 +19,7 @@ const routes = [
   { path: "/users", name: "Users", component: UsersView, meta: { requiresAuth: true } },
   { path: "/vehicles", name: "Veiculos", component: VehiclesView, meta: { requiresAuth: true } },
   { path: "/drivers", name: "Motoristas", component: DriversView, meta: { requiresAuth: true } },
-  { path: "/agendamentos", name: "Agendamentos", component: AgendamentosView, meta: { requiresAuth: true } },
+  { path: "/schedules", name: "Agendamentos", component: ScheduleView, meta: { requiresAuth: true } },
 ];
 
 const router = createRouter({
