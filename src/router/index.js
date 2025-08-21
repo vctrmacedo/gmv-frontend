@@ -8,11 +8,6 @@ import VehiclesView from '@/views/VehiclesView.vue';
 import DriversView from "@/views/DriversView.vue";
 import ScheduleView from "@/views/ScheduleView.vue";
 
-// placeholders (você pode criar depois)
-const VeiculosView = { template: '<v-container class="py-6"><h2>Veículos</h2></v-container>' }
-const MotoristasView = { template: '<v-container class="py-6"><h2>Motoristas</h2></v-container>' }
-const AgendamentosView = { template: '<v-container class="py-6"><h2>Agendamentos</h2></v-container>' }
-
 const routes = [
   { path: "/", redirect: "/login" },
   { path: "/login", name: "Login", component: Login },
