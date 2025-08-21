@@ -5,7 +5,7 @@
       <p></p>
       <h1 class="text-h4 font-weight-bold mb-2">DASHBOARD</h1>
       <p class="text-subtitle-1 text-medium-emphasis">
-        Bem-vindo ao Sistema de Gerenciamento de Veículos e Motoristas
+        Bem-vindo ao Sistema de Gerenciamento de Motoristas e Veículos
       </p>
     </div>
 
@@ -196,6 +196,7 @@
               v-if="alerts.upcomingReturns.length > 0"
               type="info" 
               variant="tonal"
+              class="mb-4"
               prominent
             >
               <template #prepend>
