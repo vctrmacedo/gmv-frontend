@@ -24,30 +24,26 @@
         <div class="login-form">
           <v-form @submit.prevent="handleLogin">
             <div class="form-group">
-              <div class="input-wrapper">
-                <v-icon class="input-icon">mdi-account</v-icon>
-                <v-text-field
-                  v-model="usernameOrEmail"
-                  label="Email ou Nome de Usuário"
-                  variant="outlined"
-                  hide-details
-                  class="custom-input"
-                />
-              </div>
+              <v-text-field
+                v-model="usernameOrEmail"
+                label="Email ou Nome de Usuário"
+                variant="outlined"
+                hide-details
+                prepend-inner-icon="mdi-account"
+                class="custom-input"
+              />
             </div>
 
             <div class="form-group">
-              <div class="input-wrapper">
-                <v-icon class="input-icon">mdi-lock</v-icon>
-                <v-text-field
-                  v-model="password"
-                  label="Senha"
-                  type="password"
-                  variant="outlined"
-                  hide-details
-                  class="custom-input"
-                />
-              </div>
+              <v-text-field
+                v-model="password"
+                label="Senha"
+                type="password"
+                variant="outlined"
+                hide-details
+                prepend-inner-icon="mdi-lock"
+                class="custom-input"
+              />
             </div>
 
             <v-btn 
@@ -246,22 +242,8 @@ export default {
   margin-bottom: 24px;
 }
 
-.input-wrapper {
-  position: relative;
-}
-
-.input-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  color: #667eea;
-}
-
 .custom-input :deep(.v-field) {
   border-radius: 16px;
-  padding-left: 48px;
   background: rgba(102, 126, 234, 0.05);
   border: 2px solid rgba(102, 126, 234, 0.1);
   transition: all 0.3s ease;
@@ -278,13 +260,12 @@ export default {
 }
 
 .custom-input :deep(.v-field__input) {
-  padding-left: 48px;
   font-size: 1rem;
 }
 
-.custom-input :deep(.v-label) {
-  left: 48px;
-  color: #666;
+.custom-input :deep(.v-field__prepend-inner) .v-icon {
+  color: #667eea;
+  margin-right: 12px;
 }
 
 .login-button {
