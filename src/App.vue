@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { removeCookie } from "@/utils/cookies";
 
 const drawer = ref(true);
 const route = useRoute();
@@ -17,7 +18,7 @@ const items = [
 ];
 
 function logout() {
-  localStorage.removeItem("token");
+  removeCookie("auth_token");
   router.push({ name: "Login" });
 }
 </script>

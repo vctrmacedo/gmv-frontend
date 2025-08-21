@@ -40,6 +40,7 @@
 
 <script>
 import axios from "axios";
+import { setCookie } from "@/utils/cookies";
 
 export default {
   name: "Login",
@@ -57,8 +58,11 @@ export default {
           password: this.password,
         });
 
-        // Guardar token no localStorage
-        localStorage.setItem("token", response.data.access_token);
+        // Guardar token em cookie seguro
+        setCookie("auth_token", response.data.access_token, 7, {
+          secure: process.env.NODE_ENV === 'production', // HTTPS em produção
+          sameSite: 'Strict' // Proteção CSRF
+        });
 
         // Redirecionar para Home
         this.$router.push("/home");

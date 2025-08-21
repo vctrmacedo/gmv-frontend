@@ -46,8 +46,28 @@
       </v-card-text>
     </v-card>
 
+    <!-- CAMPO DE BUSCA -->
+    <v-text-field
+      v-model="search"
+      label="Buscar veículos..."
+      prepend-inner-icon="mdi-magnify"
+      variant="outlined"
+      clearable
+      hide-details
+      class="mb-4"
+    />
+
     <!-- TABELA DE VEÍCULOS -->
-    <v-data-table :headers="headers" :items="vehicles" :loading="loading" class="elevation-1">
+    <v-data-table 
+      :headers="headers" 
+      :items="vehicles" 
+      :loading="loading" 
+      :search="search"
+      :items-per-page="10"
+      :items-per-page-options="[5, 10, 25, 50, 100]"
+      show-current-page
+      class="elevation-1"
+    >
       <template #item.active="{ item }">
         <span :class="item.active ? 'text-success' : 'text-error'">
           {{ item.active ? 'Ativo' : 'Inativo' }}
@@ -123,6 +143,7 @@ export default {
       loading: false,
       vehicles: [],
       errorMessage: "",
+      search: "", // Campo de busca
       headers: [
         { title: "ID", key: "id", sortable: true },
         { title: "Placa", key: "license_plate" },

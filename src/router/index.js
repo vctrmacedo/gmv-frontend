@@ -1,5 +1,6 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from "vue-router";
+import { getCookie } from "@/utils/cookies";
 import Login from "../views/Login.vue";
 import HomeView from "../views/HomeView.vue";
 import UsersView from "../views/UsersView.vue";
@@ -29,7 +30,7 @@ const router = createRouter({
 
 // auth guard
 router.beforeEach((to, from, next) => {
-  const isAuth = !!localStorage.getItem("token");
+  const isAuth = !!getCookie("auth_token");
   if (to.meta.requiresAuth && !isAuth) return next({ name: "Login" });
   if (to.name === "Login" && isAuth) return next({ name: "Home" });
   next();
